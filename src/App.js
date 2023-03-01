@@ -2,6 +2,7 @@ import "./App.css";
 import { Container, Row, Col } from "react-bootstrap";
 
 import ContactForm from "./components/ContactForm";
+import ContactList from "./components/ContactList";
 
 //왼쪽에는 연락처를 등록하는 폼이, 오른쪽에는 연락처 리스트와 search 창이 있다
 //리스트에 유저 이름과 전화번호를 추가 할 수 있다.
@@ -18,7 +19,9 @@ function App() {
             <ContactForm />
           </Col>
 
-          <Col></Col>
+          <Col>
+            <ContactList />
+          </Col>
         </Row>
       </Container>
     </div>
