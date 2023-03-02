@@ -22,6 +22,7 @@ function reducer(state = initialState, action) {
         ],
       };
   }
+  return { ...state };
 }
 
 // function reducer(state = initialState, action) {
