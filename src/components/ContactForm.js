@@ -3,10 +3,18 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useDispatch } from "react-redux";
 
 const ContactForm = () => {
+  const dispatch = useDispatch();
+
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const addContact = (e) => {
+    e.preventDefault();
+    dispatch({ type: "ADD_CONTACT", payload: { name, phoneNumber } });
+  };
 
   //   const getName = (e) => {
   //     setName(e.target.value);
@@ -14,7 +22,7 @@ const ContactForm = () => {
   //이렇게 만드는게 정석(?) 처럼 보이지만 조금 더 깔끔하게 만들면
 
   return (
-    <Form>
+    <Form onSubmit={addContact}>
       <Form.Group
         className="mb-3"
         controlId="formName"
